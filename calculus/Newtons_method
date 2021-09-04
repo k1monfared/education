@@ -1,0 +1,21 @@
+# Use Newton's method to approximate a root of a function
+
+def Newtons_method(f,a,n):
+    var('x')
+    f(x) = f
+    guess = a
+    fprime = f.derivative(x)
+    g(x) = x-f(x)/fprime(x)
+    N = n
+    Sguess = [guess]
+    print "Initial Guess: %20.16f"%(guess)
+    for i in range(0,N):
+        Nguess = g(guess)
+        print "Next Guess:    %20.16f"%(Nguess)
+        Sguess += [Nguess]
+        guess = Nguess.n(digits=15)
+
+    print "An estimate of the root is %20.16f"%(Sguess[N])
+
+# Usage:
+#Newtons_method(x^2-57,9,5)

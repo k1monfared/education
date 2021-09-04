@@ -1,0 +1,6 @@
+# Plot 3D with cross sections
+
+var('x,y,z') 
+f = x^2 + y^2
+R = 4
+sum([plot3d(f,(x,-R,R),(y,level,level+0.1),frame=False) for level in srange(-R,R,1)]+[implicit_plot3d(f==z,(x,-R,R),(y,-R,R),(z,-1,32),color='khaki',opacity=0.7,frame=False)])

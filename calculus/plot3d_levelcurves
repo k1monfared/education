@@ -1,0 +1,6 @@
+# Plot 3D with level curves
+
+var('x,y,z') 
+f = x^2 + y^2
+R = 4
+sum([implicit_plot3d(f==level,(x,-R,R),(y,-R,R),(z,level,level+0.1),frame=False) for level in srange(0,16,2)]+[implicit_plot3d(f==z,(x,-R,R),(y,-R,R),(z,-1,16),color='khaki',opacity=0.7,frame=False)])
